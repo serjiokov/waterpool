@@ -46,6 +46,7 @@ public class WaterPoolCalculator {
 	}
 
 	public static long calcFromRightAndLeft(int[] landscape) {
+		int numberOperation = 0;
 		long volume = 0;
 		int rightIndex = landscape.length - 1;
 		int letftindex = 0;
@@ -54,28 +55,31 @@ public class WaterPoolCalculator {
 		int lftPivot = landscape[letftindex];
 
 		while (letftindex < rightIndex) {
-			int l = landscape[letftindex];
-			int r = landscape[rightIndex];
-			if (r < l) {
+			numberOperation++;
+			int lValue = landscape[letftindex];
+			int rValue = landscape[rightIndex];
+			if (rValue < lValue) {
 				// go from right to left
-				if (rtPivot < r) {
-					rtPivot = r;
+				if (rtPivot < rValue) {
+					rtPivot = rValue;
 				}
-				volume += rtPivot - r;
+				volume += rtPivot - rValue;
 				rightIndex--;
 			} else {
 				// go from left to right
-				if (lftPivot < l) {
-					lftPivot = l;
+				if (lftPivot < lValue) {
+					lftPivot = lValue;
 				}
-				volume += lftPivot - l;
+				volume += lftPivot - lValue;
 				letftindex++;
 			}
 		}
+		System.out.println("Alg[2]: lenght:" + landscape.length + " circles: [" + numberOperation + "]");
 		return volume;
 	}
 
 	public static long calculateWaterAmountHorizontallyandVertically(int[] landscape) {
+		int numberOperation = 0;
 		long volume = 0;
 		List<Integer> elements = new ArrayList<>();
 
@@ -88,6 +92,7 @@ public class WaterPoolCalculator {
 			int pivot = landscape[pivotIndex];
 			// vertical
 			for (int i = pivotIndex + 1; i < landscape.length; i++) {
+				numberOperation++; // just for counting
 				int current = landscape[i];
 
 				if (pivot - deltaHeight > current) {
@@ -107,7 +112,7 @@ public class WaterPoolCalculator {
 				elements.clear();
 			}
 		}
-
+		System.out.println("Alg[1]: lenght:" + landscape.length + " circles: [" + numberOperation + "]");
 		return volume;
 	}
 
