@@ -2,7 +2,7 @@ name: build-github-actions
 run-name: ${{ github.actor }} is launch build procedure 
 on: [push]
 jobs:
-  check-bats-version:
+  build-and-test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3

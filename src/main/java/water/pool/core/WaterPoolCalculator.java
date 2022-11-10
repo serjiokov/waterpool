@@ -81,30 +81,29 @@ public class WaterPoolCalculator {
 
 		// compute pits square
 		// find shapes of heights landscape
-		int dLevel = 0;
+		int deltaHeight = 0;
 		int pivotIndex = 0;
 
 		while (pivotIndex < landscape.length - 1) {
-
 			int pivot = landscape[pivotIndex];
 			// vertical
 			for (int i = pivotIndex + 1; i < landscape.length; i++) {
 				int current = landscape[i];
-				int delta = pivot - current - dLevel;
-				if (delta > 0) {
+
+				if (pivot - deltaHeight > current) {
 					elements.add(current);
 				} else {
-					volume += computeSquare(elements, pivot - dLevel);
+					volume += computeSquare(elements, pivot - deltaHeight);
 					pivotIndex = i;
 					elements.clear();
-					dLevel = 0;
+					deltaHeight = 0;
 					break;
 				}
 			}
 			// horizontal
 			// when pivot is MAX of heels and elements for handling exits
-			if (!elements.isEmpty() && pivot > 0) {
-				dLevel++;
+			if (!elements.isEmpty()) {
+				deltaHeight++;
 				elements.clear();
 			}
 		}
