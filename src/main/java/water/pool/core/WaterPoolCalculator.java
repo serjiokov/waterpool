@@ -74,7 +74,7 @@ public class WaterPoolCalculator {
 				letftindex++;
 			}
 		}
-		System.out.println("Alg[2]: lenght:" + landscape.length + " circles: [" + numberOperation + "]");
+		System.out.println("Alg[2]: lenght:" + landscape.length + " cyrcles: [" + numberOperation + "]");
 		return volume;
 	}
 
@@ -112,7 +112,7 @@ public class WaterPoolCalculator {
 				elements.clear();
 			}
 		}
-		System.out.println("Alg[1]: lenght:" + landscape.length + " circles: [" + numberOperation + "]");
+		System.out.println("Alg[1]: lenght:" + landscape.length + " cyrcles: [" + numberOperation + "]");
 		return volume;
 	}
 
