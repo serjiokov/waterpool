@@ -8,8 +8,8 @@ import water.pool.core.WaterPoolCalculator;
 
 public class WaterPoolNoSourceTest {
 	@Test
-	public void waterComputationNullSourceTest() {
-		assertFalse(WaterPoolCalculator.validateLandscape(null));
-		assertFalse(WaterPoolCalculator.validateLandscape(new int[] {}));
+	public void waterpoolShouldFailforNullsTest() {
+		assertFalse(WaterPoolCalculator.isLandscapeValid(null));
+		assertFalse(WaterPoolCalculator.isLandscapeValid(new int[] {}));
 	}
 }

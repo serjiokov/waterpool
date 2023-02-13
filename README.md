@@ -1,5 +1,10 @@
-# The waterpool simple computation algorithm
-## Based on defined landscape the volume of pints computed by:
-  1. Horizontal and vertical approach
-  2. Left-Right asymmetric approach 
-  
+## The waterpool volume computation algorithm 
+
+### Computation based on defined landscape 
+
+#### main class  WaterPoolApplication 
+- In order to launch tests use
+
+```java 
+mvn clean verify
+```
