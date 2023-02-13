@@ -49,11 +49,8 @@ public class WaterPoolCalculatorTest {
 
 	@Test
 	public void waterPoolCalculatorTest() {
-		long calculateWaterAmount = WaterPoolCalculator.calculateWaterAmountHorizontallyandVertically(source);
-		assertEquals(result, calculateWaterAmount);
-
-		calculateWaterAmount = WaterPoolCalculator.calcFromRightAndLeft(source);
-		assertEquals(result, calculateWaterAmount);
+		long volume = WaterPoolCalculator.calculationFromRightAndLeft(source);
+		assertEquals(result, volume);
 	}
 
 }
